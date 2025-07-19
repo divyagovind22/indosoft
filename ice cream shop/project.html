@@ -1,0 +1,229 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Ice Land</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: url("homebg.jpg") no-repeat center center/cover;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: rgba(255, 240, 245, 0.85);
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      margin: 20px;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 70px;
+      width: auto;
+    }
+
+    .nav-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #6a2e7c;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover {
+      background-color: #fcc7ed;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    header {
+      text-align: center;
+      margin-top: 160px;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 60px;
+      color: #FFB6C1;
+      font-family: 'Dancing Script', cursive;
+      letter-spacing: 1px;
+      margin: 0;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .highlight-all,
+    .highlight-need,
+    .highlight-icecream {
+      color: #ff6f61;
+    }
+
+    .subheading {
+      font-size: 28px;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    /* Call to Action */
+    .cta-button {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta-button a {
+      background-color: #f5b8e3;
+      color: #fff;
+      padding: 14px 36px;
+      font-size: 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .cta-button a:hover {
+      background-color: #e677c5;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #3b261d;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 15px;
+      position: relative;
+    }
+
+    footer a {
+      color: #ff6f61;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      header h1 {
+        font-size: 48px;
+      }
+
+      .cta-button a {
+        font-size: 20px;
+        padding: 12px 30px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+      }
+
+      .nav-links a {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      header h1 {
+        font-size: 38px;
+      }
+
+      .cta-button a {
+        font-size: 18px;
+        padding: 10px 24px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo img {
+        height: 50px;
+      }
+
+      header h1 {
+        font-size: 32px;
+      }
+
+      .subheading {
+        font-size: 20px;
+      }
+
+      .cta-button a {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      footer {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="logonm.png" alt="Ice Land Logo">
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="project.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="items1.html">Items</a></li>
+        <li><a href="flavors.html">Flavors</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="contact.html">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>
+      <span class="highlight-all">ALL</span> YOU <span class="highlight-need">NEED</span> IS LOVE <br>& <span class="highlight-icecream">ICE CREAM</span>
+    </h1>
+    <p class="subheading">Scoops of Happiness in every bite...!</p>
+  </header>
+
+  <!-- Call to Action -->
+  <div class="cta-button">
+    <a href="items1.html">Order Now</a>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 Ice Land P | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+  </footer>
+
+</body>
+</html>

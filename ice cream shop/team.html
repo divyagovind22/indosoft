@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Famous Ice Cream Chefs</title>
+
+  <!-- Google Fonts -->
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+
+  <!-- Font Awesome -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/5.10.0/css/all.min.css" rel="stylesheet"/>
+
+  <!-- Owl Carousel CSS -->
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" rel="stylesheet"/>
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.theme.default.min.css" rel="stylesheet"/>
+
+  <style>
+    * {
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Poppins', sans-serif;
+      margin: 0;
+      background: radial-gradient(circle, rgba(233, 212, 244, 0.1) 10%, rgba(160, 235, 236, 1) 49%, rgba(235, 198, 236, 1) 90%);
+      color: #333;
+    }
+    .back-button {
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #FFB6C1;
+            color: white;
+            border: none;
+            margin: 20px 0 20px 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.4s, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #ff7f9b;
+            transform: translateY(-3px);
+        }
+
+        .back-button:active {
+            background-color: #ff4d6b;
+            transform: translateY(0);
+        }
+
+    .container {
+      max-width: 1200px;
+      margin: auto;
+      padding: 60px 20px;
+    }
+
+    .section-title {
+      text-align: center;
+      font-size: 38px;
+      font-weight: 700;
+      margin-bottom: 50px;
+      color: #444;
+    }
+
+    .team-item {
+      text-align: center;
+      padding: 30px 15px;
+      transition: transform 0.3s ease, box-shadow 0.3s ease;
+    }
+
+    .team-item:hover {
+      transform: translateY(-10px);
+      box-shadow: 0 12px 25px rgba(0, 0, 0, 0.15);
+    }
+
+    .team-img img {
+      width: 150px;
+      height: 150px;
+      object-fit: cover;
+      border-radius: 50%;
+      border: 6px solid #fff;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      margin-bottom: 20px;
+      transition: transform 0.3s ease;
+    }
+
+    .team-img img:hover {
+      transform: scale(1.05);
+    }
+
+    .team-info {
+      background-color: #fff;
+      padding: 30px 20px;
+      border-radius: 12px;
+      box-shadow: 0 8px 20px rgba(0, 0, 0, 0.08);
+      margin-top: -70px;
+      min-height: 220px;
+    }
+
+    .team-info h3 {
+      font-weight: 600;
+      font-size: 20px;
+      margin-bottom: 12px;
+      color: #222;
+    }
+
+    .team-info p {
+      font-size: 14px;
+      color: #555;
+      line-height: 1.6;
+    }
+
+    .owl-nav button.owl-prev,
+    .owl-nav button.owl-next {
+      position: absolute;
+      top: 35%;
+      background: #fff;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 50%;
+      font-size: 18px;
+      box-shadow: 0 4px 12px rgba(0, 0, 0, 0.1);
+      transition: background 0.3s ease;
+    }
+
+    .owl-nav button.owl-prev:hover,
+    .owl-nav button.owl-next:hover {
+      background: #eee;
+    }
+
+    .owl-nav button.owl-prev {
+      left: -30px;
+    }
+
+    .owl-nav button.owl-next {
+      right: -30px;
+    }
+
+    .owl-dots {
+      margin-top: 20px;
+    }
+
+    .owl-dot span {
+      width: 12px;
+      height: 12px;
+      background: #ccc;
+      display: inline-block;
+      margin: 5px 4px;
+      border-radius: 50%;
+      transition: background 0.3s ease;
+    }
+
+    .owl-dot.active span {
+      background: #444;
+    }
+  </style>
+</head>
+<body>
+  <!-- Back Button -->
+    <a href="index.html" style="text-decoration: none;">
+        <button class="back-button">
+            <i class="fas fa-arrow-left"></i> 
+        </button>
+    </a>
+
+  <div class="container">
+    <h1 class="section-title">Most Famous Ice Cream Chefs</h1>
+    <div class="owl-carousel owl-theme">
+      
+      <!-- Chef 1 -->
+      <div class="team-item">
+        <div class="team-img">
+          <img src="chef1.jpg" alt="Roberta Hall-McCarron">
+        </div>
+        <div class="team-info">
+          <h3>Roberta Hall-McCarron</h3>
+          <p>Loves chocolate ice cream with salty notes. Favorite: Magnum & Happy Endings ice cream sandwiches.</p>
+        </div>
+      </div>
+
+      <!-- Chef 2 -->
+      <div class="team-item">
+        <div class="team-img">
+          <img src="chef2.jpg" alt="Amy Elles">
+        </div>
+        <div class="team-info">
+          <h3>Amy Elles</h3>
+          <p>Pistachio and mint chocolate chip are her go-to flavors. Quality ingredients are her top priority.</p>
+        </div>
+      </div>
+
+      <!-- Chef 3 -->
+      <div class="team-item">
+        <div class="team-img">
+          <img src="chef3.jpg" alt="Jun Tanaka">
+        </div>
+        <div class="team-info">
+          <h3>Jun Tanaka</h3>
+          <p>Feast ice cream fan — especially mint. Loves combining textures like chocolate coating and biscuit crunch.</p>
+        </div>
+      </div>
+
+      </div>
+  </div>
+
+  <!-- JS Scripts -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/owl.carousel.min.js"></script>
+  <script>
+    $(document).ready(function(){
+      $(".owl-carousel").owlCarousel({
+        loop: true,
+        margin: 30,
+        nav: true,
+        dots: true,
+        autoplay: true,
+        autoplayTimeout: 3500,
+        smartSpeed: 700,
+        responsive: {
+          0: { items: 1 },
+          576: { items: 2 },
+          768: { items: 3 },
+          992: { items: 4 }
+        }
+      });
+    });
+  </script>
+</body>
+</html>

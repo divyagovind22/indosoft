@@ -1,0 +1,352 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>GELATO</title>
+  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
+  <style>
+    body {
+      margin: 0;
+      padding: 0;
+      font-family: 'Poppins', sans-serif;
+      color: #fff;
+      background: url("homebg.jpg") no-repeat center center/cover;
+      background-size: cover;
+    }
+
+    /* Navbar */
+    nav {
+      background-color: rgba(255, 240, 245, 0.85);
+      border-radius: 50px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
+      margin: 20px;
+      padding: 10px 30px;
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      flex-wrap: wrap;
+    }
+
+    .logo img {
+      height: 70px;
+      width: auto;
+    }
+
+    .nav-links ul {
+      list-style: none;
+      padding: 0;
+      margin: 0;
+      display: flex;
+      gap: 20px;
+      flex-wrap: wrap;
+    }
+
+    .nav-links a {
+      color: #6a2e7c;
+      text-decoration: none;
+      font-weight: 600;
+      font-size: 18px;
+      padding: 10px 16px;
+      border-radius: 8px;
+      transition: 0.3s ease-in-out;
+    }
+
+    .nav-links a:hover {
+      background-color: #fcc7ed;
+      color: #fff;
+    }
+
+    /* Hero Section */
+    header {
+      text-align: center;
+      margin-top: 160px;
+      padding: 0 20px;
+    }
+
+    header h1 {
+      font-size: 60px;
+      color: #FFB6C1;
+      font-family: 'Dancing Script', cursive;
+      letter-spacing: 1px;
+      margin: 0;
+      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
+    }
+
+    .highlight-all,
+    .highlight-need,
+    .highlight-icecream {
+      color: #ff6f61;
+    }
+
+    .subheading {
+      font-size: 28px;
+      color: #fff;
+      margin-top: 10px;
+    }
+
+    /* Call to Action */
+    .cta-button {
+      text-align: center;
+      margin: 60px 0;
+    }
+
+    .cta-button a {
+      background-color: #f5b8e3;
+      color: #fff;
+      padding: 14px 36px;
+      font-size: 22px;
+      border-radius: 30px;
+      text-decoration: none;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+      transition: background 0.3s ease;
+    }
+
+    .cta-button a:hover {
+      background-color: #e677c5;
+    }
+
+    /* Footer */
+    footer {
+      background-color: #3b261d;
+      color: #fff;
+      text-align: center;
+      padding: 20px 10px;
+      font-size: 15px;
+      position: relative;
+      margin-top:50px;
+    }
+
+    footer a {
+      color: #ff6f61;
+      text-decoration: none;
+    }
+
+    footer a:hover {
+      text-decoration: underline;
+    }
+
+    /* Modal Styling */
+    .w3-modal {
+      display: none;
+      position: fixed;
+      z-index: 1000;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(0, 0, 0, 0.7);
+      overflow: auto;
+      transition: opacity 0.3s ease;
+    }
+
+    .w3-modal-content {
+      background-color: #fff;
+      border-radius: 20px;
+      padding: 40px;
+      width: 500px;
+      max-width: 90%;
+      margin: 10% auto;
+      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
+      animation: fadeIn 0.5s ease-in-out;
+    }
+
+    .w3-closebtn {
+      color: #6a2e7c;
+      font-size: 30px;
+      font-weight: bold;
+      position: absolute;
+      top: 20px;
+      right: 25px;
+      cursor: pointer;
+      transition: color 0.3s ease;
+    }
+
+    .w3-closebtn:hover {
+      color: #ff6f61;
+    }
+
+    .w3-input {
+      border-radius: 10px;
+      margin: 15px 0;
+      padding: 12px;
+      width: 100%;
+      font-size: 1rem;
+      border: 1px solid #ccc;
+      background-color: #f7f7f7;
+      transition: all 0.3s ease;
+    }
+
+    .w3-input:focus {
+      border-color: #ff6f61;
+      background-color: #fff;
+      outline: none;
+    }
+
+    .w3-button {
+      background-color: #f5b8e3;
+      color: white;
+      padding: 12px 36px;
+      font-size: 16px;
+      border-radius: 8px;
+      cursor: pointer;
+      border: none;
+      transition: background-color 0.3s ease;
+    }
+
+    .w3-button:hover {
+      background-color: #e677c5;
+    }
+
+    /* Animation for Modal */
+    @keyframes fadeIn {
+      from {
+        opacity: 0;
+      }
+      to {
+        opacity: 1;
+      }
+    }
+
+    /* Responsive Styles */
+    @media (max-width: 1024px) {
+      header h1 {
+        font-size: 48px;
+      }
+    }
+
+    @media (max-width: 768px) {
+      nav {
+        flex-direction: column;
+        align-items: center;
+      }
+
+      .nav-links ul {
+        flex-direction: column;
+        align-items: center;
+        margin-top: 15px;
+      }
+
+      .nav-links a {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      header h1 {
+        font-size: 38px;
+      }
+    }
+
+    @media (max-width: 480px) {
+      .logo img {
+        height: 50px;
+      }
+
+      header h1 {
+        font-size: 32px;
+      }
+
+      .subheading {
+        font-size: 20px;
+      }
+
+      .cta-button a {
+        font-size: 16px;
+        padding: 10px 20px;
+      }
+
+      footer {
+        font-size: 13px;
+      }
+    }
+  </style>
+</head>
+
+<body>
+
+  <!-- Navigation Bar -->
+  <nav>
+    <div class="logo">
+      <img src="GELATO.PNG" alt="Ice Land Logo">
+    </div>
+    <div class="nav-links">
+      <ul>
+        <li><a href="index.html">Home</a></li>
+        <li><a href="about.html">About</a></li>
+        <li><a href="items1.html">Items</a></li>
+        <li><a href="flavors.html">Flavors</a></li>
+        <li><a href="team.html">Team</a></li>
+        <li><a href="javascript:void(0)" onclick="openModal()">Contact</a></li>
+      </ul>
+    </div>
+  </nav>
+
+  <!-- Hero Section -->
+  <header>
+    <h1>
+      <span class="highlight-all">ALL</span> YOU <span class="highlight-need">NEED</span> IS LOVE <br>& <span class="highlight-icecream">ICE CREAM</span>
+    </h1>
+    <p class="subheading">Scoops of Happiness in every bite...!</p>
+  </header>
+
+  <!-- Call to Action -->
+  <div class="cta-button">
+    <a href="items1.html">Order Now</a>
+  </div>
+
+  <!-- Contact Modal -->
+  <div id="contactModal" class="w3-modal">
+    <div class="w3-modal-content">
+      <span class="w3-closebtn" onclick="closeModal()">&times;</span>
+      <h2 style="text-align: center; color: #6a2e7c;">Contact Us</h2>
+      <form action="/submit_contact_form" method="POST">
+        <input class="w3-input" type="text" name="name" placeholder="Your Name" required>
+        <input class="w3-input" type="email" name="email" placeholder="Your Email" required>
+        <textarea class="w3-input" name="message" placeholder="Your Message" required rows="4"></textarea>
+        <button type="button" class="w3-button" onclick="openSuccessModal()">Send Message</button>
+      </form>
+    </div>
+  </div>
+
+  <!-- Success Modal -->
+  <div id="successModal" class="w3-modal">
+    <div class="w3-modal-content">
+      <span class="w3-closebtn" onclick="closeSuccessModal()">&times;</span>
+      <h2 style="text-align: center; color: #6a2e7c;">Thank You!</h2>
+      <p style="text-align: center;">Your message has been sent successfully. We'll get back to you shortly.</p>
+      <div style="text-align: center;">
+        <button onclick="closeSuccessModal()" class="w3-button">Close</button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Footer -->
+  <footer>
+    <p>&copy; 2025 GELATO..! | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+  </footer>
+
+  <script>
+    // Function to open the contact modal
+    function openModal() {
+      document.getElementById('contactModal').style.display = 'block';
+    }
+
+    // Function to close the contact modal
+    function closeModal() {
+      document.getElementById('contactModal').style.display = 'none';
+    }
+
+    // Function to open the success modal
+    function openSuccessModal() {
+      document.getElementById('successModal').style.display = 'block';
+      document.getElementById('contactModal').style.display = 'none'; // Close the contact modal
+    }
+
+    // Function to close the success modal
+    function closeSuccessModal() {
+      document.getElementById('successModal').style.display = 'none';
+    }
+  </script>
+
+</body>
+</html>

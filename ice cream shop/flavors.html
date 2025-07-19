@@ -1,0 +1,271 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Flavors</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: rgb(233, 212, 244);
+            background: radial-gradient(circle, rgba(233, 212, 244, 0) 10%, rgba(160, 235, 236, 1) 49%, rgba(235, 198, 236, 1) 90%);
+        }
+
+        /* Back Button Styling */
+        .back-button {
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #FFB6C1;
+            color: white;
+            border: none;
+            margin: 20px 0 20px 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.4s, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #ff7f9b;
+            transform: translateY(-3px);
+        }
+
+        .back-button:active {
+            background-color: #ff4d6b;
+            transform: translateY(0);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 40px 0;
+            color: #555;
+            text-transform: capitalize;
+        }
+
+        /* Flavors Section */
+        .flavors-container {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(280px, 1fr));
+            gap: 30px;
+            padding: 0 30px;
+        }
+
+        /* Flavor Card */
+        .flavor-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+            cursor: pointer;
+        }
+
+        .flavor-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+        }
+
+        .flavor-card img {
+            width: 100%;
+            height: 250px;
+            object-fit: cover;
+            transition: all 0.3s ease;
+        }
+
+        .flavor-card:hover img {
+            transform: scale(1.1);
+        }
+
+        .flavor-card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .flavor-card-body h5 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .flavor-card-body p {
+            font-size: 1.2rem;
+            color: #FF6347;
+            margin-bottom: 20px;
+        }
+
+        .flavor-card-body a {
+            text-decoration: none;
+            background-color: #FFB6C1;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.4s;
+        }
+
+        .flavor-card-body a:hover {
+            background-color: #ff7f9b;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #3b261d;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .flavor-card-body h5 {
+                font-size: 1.4rem;
+            }
+
+            .flavor-card-body p {
+                font-size: 1rem;
+            }
+
+            .flavor-card-body a {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="index.html" style="text-decoration: none;">
+        <button class="back-button">
+            <i class="fas fa-arrow-left"></i> 
+        </button>
+    </a>
+
+    <!-- Section Title -->
+    <h1 class="section-title">Our Delicious Flavors</h1>
+
+    <!-- Flavors Section -->
+    <div class="flavors-container">
+        <!-- Vanilla -->
+        <div class="flavor-card">
+            <img src="ice cream2.png" alt="Vanilla">
+            <div class="flavor-card-body">
+                <h5>macadamia nut </h5>
+                <p>Classic, smooth, and creamy.<br>$90</p>
+                <a href="order 1.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Chocolate -->
+        <div class="flavor-card">
+            <img src="ice cream8.png" alt="Chocolate">
+            <div class="flavor-card-body">
+                <h5>Chocolate</h5>
+                <p>Rich, indulgent, and velvety.<br>$60</p>
+                <a href="order 1.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Strawberry -->
+        <div class="flavor-card">
+            <img src="ice cream12.png" alt="Strawberry">
+            <div class="flavor-card-body">
+                <h5>Strawberry</h5>
+                <p>Sweet and fruity with a fresh taste.<br>40</p>
+                <a href="order 1.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Mango -->
+        <div class="flavor-card">
+            <img src="ice crfeam12.png" alt="Mango">
+            <div class="flavor-card-body">
+                <h5>vanila</h5>
+                <p>Exotic, tropical, and refreshing.<br>$50</p>
+                <a href="order 1.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Pistachio -->
+        <div class="flavor-card">
+            <img src="ice cream7.png" alt="Pistachio">
+            <div class="flavor-card-body">
+                <h5>Cookies & Cream</h5>
+                <p>Nutty, creamy, and unique.<br>$70</p>
+                <a href="order 1.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Coffee -->
+        <div class="flavor-card">
+            <img src="ice cream6.png" alt="Coffee">
+            <div class="flavor-card-body">
+                <h5>Coffee</h5>
+                <p>Bold, aromatic, and energizing.<br>$30</p>
+                <a href="order 1.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Mint -->
+        <div class="flavor-card">
+            <img src="ice cream5.png" alt="Mint">
+            <div class="flavor-card-body">
+                <h5>Rasburry</h5>
+                <p>Cool, refreshing, and invigorating.<br>$70</p>
+                <a href="order 1.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Cookies & Cream -->
+        <div class="flavor-card">
+            <img src="ice cream11.webp" alt="Cookies & Cream">
+            <div class="flavor-card-body">
+                <h5>butter craem</h5>
+                <p>Crispy cookie chunks in a creamy base.</p>
+                <a href="order 1.html">Order Now</a>
+            </div>
+        </div>
+    </div>
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Delicious Flavors. All Rights Reserved.</p>
+    </footer>
+</body>
+</html>
