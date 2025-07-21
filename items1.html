@@ -1,0 +1,285 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <title>Items1</title>
+
+    <!-- Favicon -->
+    <link href="img/favicon.ico" rel="icon">
+
+    <!-- Google Web Fonts -->
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;500;600;700&display=swap" rel="stylesheet">
+
+    <!-- Font Awesome -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" rel="stylesheet">
+
+    <style>
+        /* General Styling */
+        body {
+            font-family: 'Poppins', sans-serif;
+            margin: 0;
+            padding: 0;
+            background: rgb(233, 212, 244);
+            background: radial-gradient(circle, rgba(233, 212, 244, 0) 10%, rgba(160, 235, 236, 1) 49%, rgba(235, 198, 236, 1) 90%);
+        }
+
+        /* Back Button Styling */
+        .back-button {
+            padding: 12px 20px;
+            border-radius: 10px;
+            font-size: 16px;
+            background-color: #FFB6C1;
+            color: white;
+            border: none;
+            margin: 20px 0 20px 30px;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            gap: 8px;
+            opacity: 0.9;
+            box-shadow: 0 2px 6px rgba(0, 0, 0, 0.1);
+            transition: background-color 0.4s, transform 0.3s ease;
+        }
+
+        .back-button:hover {
+            background-color: #ff7f9b;
+            transform: translateY(-3px);
+        }
+
+        .back-button:active {
+            background-color: #ff4d6b;
+            transform: translateY(0);
+        }
+
+        /* Section Title */
+        .section-title {
+            text-align: center;
+            font-size: 2.5rem;
+            font-weight: 600;
+            margin: 40px 0;
+            color: #555;
+            text-transform: capitalize;
+        }
+
+        /* Service Cards Section */
+        .services {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+            gap: 30px;
+            padding: 0 30px;
+        }
+
+        /* Service Item Card */
+        .service-card {
+            background-color: #fff;
+            border-radius: 15px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.1);
+            overflow: hidden;
+            transition: all 0.3s ease-in-out;
+        }
+
+        .service-card:hover {
+            transform: translateY(-10px);
+            box-shadow: 0 12px 36px rgba(0, 0, 0, 0.15);
+        }
+
+        .service-card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+            border-bottom: 5px solid #FFB6C1;
+        }
+
+        .service-card-body {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .service-card-body h5 {
+            font-size: 1.6rem;
+            font-weight: 600;
+            margin-bottom: 10px;
+            color: #333;
+        }
+
+        .service-card-body p {
+            font-size: 1.2rem;
+            color: #FF6347;
+            margin-bottom: 20px;
+        }
+
+        .service-card-body a {
+            text-decoration: none;
+            background-color: #FFB6C1;
+            color: white;
+            padding: 12px 25px;
+            border-radius: 8px;
+            font-size: 16px;
+            font-weight: 600;
+            transition: background-color 0.4s;
+        }
+
+        .service-card-body a:hover {
+            background-color: #ff7f9b;
+        }
+
+        /* Footer Section */
+        footer {
+            background-color: #3b261d;
+            color: #fff;
+            text-align: center;
+            padding: 20px;
+            margin-top: 60px;
+        }
+
+        footer p {
+            font-size: 1rem;
+        }
+
+        /* Mobile Responsiveness */
+        @media (max-width: 768px) {
+            .back-button {
+                font-size: 14px;
+                padding: 8px 16px;
+            }
+
+            .section-title {
+                font-size: 2rem;
+            }
+
+            .service-card-body h5 {
+                font-size: 1.4rem;
+            }
+
+            .service-card-body p {
+                font-size: 1rem;
+            }
+
+            .service-card-body a {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Back Button -->
+    <a href="index.html" style="text-decoration: none;">
+        <button class="back-button">
+            <i class="fas fa-arrow-left"></i> 
+        </button>
+    </a>
+
+    <!-- Section Title -->
+    <h1 class="section-title">Our Delicious Ice Cream </h1>
+
+    <!-- Services Section -->
+    <div class="services">
+        <!-- First Item -->
+        <div class="service-card">
+            <img src="bar.jpg" alt="Bar Ice Cream">
+            <div class="service-card-body">
+                <h5>Bar Ice Cream</h5>
+                <p>Rs-10</p>
+                <a href="order.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Second Item -->
+       <div class="service-card">
+            <img src="icebiscut.jpg" alt="Sandwich">
+            <div class="service-card-body">
+                <h5>Sandwich</h5>
+                <p>Rs-20</p>
+                <a href="order.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Third Item -->
+        <div class="service-card">
+            <img src="fruits salad.jpg" alt="Fruit Salad with Ice Cream">
+            <div class="service-card-body">
+                <h5>Fruit Salad with Ice Cream</h5>
+                <p>Rs-180</p>
+                <a href="order.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Fourth Item -->
+        <div class="service-card">
+            <img src="icebiscut.jpg" alt="Sandwich">
+            <div class="service-card-body">
+                <h5>flavord sandwich</h5>
+                <p>Rs-30</p>
+                <a href="order.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Fifth Item -->
+        <div class="service-card">
+            <img src="icecake.jpg" alt="Cake">
+            <div class="service-card-body">
+                <h5>Cake</h5>
+                <p>Rs-300</p>
+                <a href="order.html">Order Now</a>
+            </div>
+        </div>
+
+        <div class="service-card">
+            <img src="fruit-custard.jpg" alt="Fruit Salad with Ice Cream">
+            <div class="service-card-body">
+                <h5>fruit custard with Ice Cream</h5>
+                <p>Rs-180</p>
+                <a href="order.html">Order Now</a>
+            </div>
+        </div>
+        <div class="service-card">
+            <img src="ice cream1.png" alt="Bar Ice Cream">
+            <div class="service-card-body">
+                <h5>Nut Bar Ice</h5>
+                <p>Rs-10</p>
+                <a href="order.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Sixth Item -->
+        <div class="service-card">
+            <img src="milkshake.jpg" alt="Milkshake">
+            <div class="service-card-body">
+                <h5>Milkshake</h5>
+                <p>Rs-90</p>
+                <a href="order.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Seventh Item -->
+        <div class="service-card">
+            <img src="desert.jpg" alt="Dessert">
+            <div class="service-card-body">
+                <h5>Dessert</h5>
+                <p>Rs-130</p>
+                <a href="order.html">Order Now</a>
+            </div>
+        </div>
+
+        <!-- Eighth Item -->
+        <div class="service-card">
+            <img src="icepop.jpg" alt="Ice Pop">
+            <div class="service-card-body">
+                <h5>Ice Pop</h5>
+                <p>Rs-5</p>
+                <a href="order.html">Order Now</a>
+            </div>
+        </div>
+    </div>
+
+
+
+    <!-- Footer Section -->
+    <footer>
+        <p>&copy; 2025 Delicious Ice Cream . All Rights Reserved.</p>
+    </footer>
+</body>
+</html>

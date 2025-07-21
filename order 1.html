@@ -1,0 +1,247 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Order Page</title>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background: rgb(233, 212, 244);
+            background: radial-gradient(circle, rgba(233, 212, 244, 0) 10%, rgba(160, 235, 236, 1) 49%, rgba(235, 198, 236, 1) 90%);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 50px auto;
+            background-color: white;
+            padding: 30px;
+            border-radius: 8px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        }
+
+        h1 {
+            text-align: center;
+            color: #333;
+        }
+
+        .form-group {
+            margin-bottom: 20px;
+        }
+
+        label {
+            font-size: 16px;
+            font-weight: bold;
+            display: block;
+            color: #333;
+        }
+
+        select, input[type="text"], input[type="number"], input[type="email"] {
+            width: 100%;
+            padding: 12px;
+            font-size: 16px;
+            margin-top: 8px;
+            margin-bottom: 12px;
+            border-radius: 4px;
+            border: 1px solid #ccc;
+        }
+
+        input[type="submit"] {
+            background-color: #D7A6D1;
+            color: black;
+            padding: 14px 20px;
+            border: none;
+            cursor: pointer;
+            font-size: 18px;
+            width: 100%;
+            border-radius: 4px;
+        }
+
+        input[type="submit"]:hover {
+            background-color:#E3D8F3;
+        }
+
+        .back-button {
+            text-align: center;
+            margin-top: 20px;
+        }
+
+        .back-button a {
+            text-decoration: none;
+            color: black;
+            font-size: 16px;
+        }
+
+        .back-button a:hover {
+            color: black;
+        }
+
+        /* Modal Styles */
+        .modal {
+            display: none;
+            position: fixed;
+            z-index: 1;
+            left: 0;
+            top: 0;
+            width: 100%;
+            height: 100%;
+            background-color: rgba(0,0,0,0.4);
+            padding-top: 60px;
+            opacity: 0;
+            transition: opacity 0.4s ease-in-out;
+        }
+
+        .modal-content {
+            background-color: #fefefe;
+            margin: 5% auto;
+            padding: 20px;
+            border: 1px solid #888;
+            width: 80%;
+            max-width: 500px;
+            text-align: center;
+            opacity: 0;
+            transform: translateY(-20px);
+            transition: opacity 0.4s ease-in-out, transform 0.4s ease-in-out;
+        }
+
+        .modal-content h2 {
+            color: green;
+            font-size: 24px;
+        }
+
+        .modal-content p {
+            font-size: 18px;
+            margin: 20px 0;
+        }
+
+        .close {
+            color: #aaa;
+            font-size: 28px;
+            font-weight: bold;
+            position: absolute;
+            top: 10px;
+            right: 25px;
+            transition: 0.3s;
+            cursor: pointer;
+        }
+
+        .close:hover,
+        .close:focus {
+            color: black;
+            text-decoration: none;
+        }
+
+        /* Modal Transition */
+        .modal.show {
+            display: block;
+            opacity: 1;
+        }
+
+        .modal-content.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+        <h1>Place Your Order</h1>
+
+        <form id="orderForm">
+            <!-- Product Selection -->
+            <div class="form-group">
+                <label for="product">Choose a Product:</label>
+                <select name="product" id="product" required>
+                    <option value="Macadamia Nut">Macadamia Nut</option>
+                    <option value="Macadamia Nut Bar">Macadamia Nut Bar</option>
+                    <option value="Mango Rasburry">Mango Rasburry</option>
+                    <option value="Cookies&Cream">Cookies&Cream</option>
+                    <option value="Cookies&Cream Bar">Cookies&Cream Bar</option>
+                    <option value="Belgium Chocolate">Belgium Chocolate</option>
+                    <option value="Caramel Biscuit">Caramel Biscuit</option>
+                    <option value="Blueberry">Blueberry</option>
+                    <option value="Vanila">Vanila</option>
+                     <option value="strawberry">strawberry</option>
+                      <option value="Pistachio">Pistachio</option>
+                </select>
+            </div>
+
+            <!-- Quantity Selection -->
+            <div class="form-group">
+                <label for="quantity">Quantity:</label>
+                <input type="number" id="quantity" name="quantity" min="1" required>
+            </div>
+
+            <!-- Customer Information -->
+            <div class="form-group">
+                <label for="name">Your Name:</label>
+                <input type="text" id="name" name="name" placeholder="Enter your full name" required>
+            </div>
+
+            <div class="form-group">
+                <label for="email">Your Email:</label>
+                <input type="email" id="email" name="email" placeholder="Enter your email" required>
+            </div>
+
+            <div class="form-group">
+                <label for="address">Your Address:</label>
+                <input type="text" id="address" name="address" placeholder="Enter your address" required>
+            </div>
+
+            <div class="form-group">
+                <label for="phone">Your Phone Number:</label>
+                <input type="text" id="phone" name="phone" placeholder="Enter your phone number" required>
+            </div>
+
+            <!-- Submit Button -->
+            <input type="submit" value="Place Order">
+        </form>
+
+        <!-- Back Button -->
+        <div class="back-button">
+            <a href="index.html">Back to Home</a>
+        </div>
+    </div>
+
+    <!-- Modal -->
+    <div id="orderModal" class="modal">
+        <div class="modal-content">
+            <span class="close" id="closeModal">&times;</span>
+            <h2>Order Placed Successfully!</h2>
+            <p>Your order has been placed. We will contact you shortly.</p>
+        </div>
+    </div>
+
+    <script>
+        // Get modal and close button elements
+        var modal = document.getElementById("orderModal");
+        var closeModal = document.getElementById("closeModal");
+        var orderForm = document.getElementById("orderForm");
+
+        // Show modal when the form is submitted
+        orderForm.addEventListener("submit", function(event) {
+            event.preventDefault();  // Prevent form submission to server
+            modal.classList.add("show");  // Show modal
+            document.querySelector(".modal-content").classList.add("show");  // Animate modal content
+        });
+
+        // Close modal when user clicks on the close button
+        closeModal.onclick = function() {
+            modal.classList.remove("show");  // Hide modal
+            document.querySelector(".modal-content").classList.remove("show");  // Animate modal content
+        }
+
+        // Close modal when user clicks anywhere outside the modal
+        window.onclick = function(event) {
+            if (event.target == modal) {
+                modal.classList.remove("show");  // Hide modal
+                document.querySelector(".modal-content").classList.remove("show");  // Animate modal content
+            }
+        }
+    </script>
+
+</body>
+</html>
