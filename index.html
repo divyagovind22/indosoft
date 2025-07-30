@@ -1,352 +1,524 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
+
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
-  <title>GELATO</title>
-  <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600&family=Dancing+Script:wght@400;700&display=swap" rel="stylesheet">
-  <style>
-    body {
-      margin: 0;
-      padding: 0;
-      font-family: 'Poppins', sans-serif;
-      color: #fff;
-      background: url("homebg.jpg") no-repeat center center/cover;
-      background-size: cover;
-    }
+  <!-- Basic -->
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <!-- Mobile Metas -->
+  <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no" />
+  <!-- Site Metas -->
+  <meta name="keywords" content="" />
+  <meta name="description" content="" />
+  <meta name="author" content="" />
 
-    /* Navbar */
-    nav {
-      background-color: rgba(255, 240, 245, 0.85);
-      border-radius: 50px;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.15);
-      margin: 20px;
-      padding: 10px 30px;
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      flex-wrap: wrap;
-    }
+  <title>Neogym</title>
 
-    .logo img {
-      height: 70px;
-      width: auto;
-    }
+  <!-- slider stylesheet -->
+  <link rel="stylesheet" type="text/css" href="https://cdnjs.cloudflare.com/ajax/libs/OwlCarousel2/2.3.4/assets/owl.carousel.min.css" />
 
-    .nav-links ul {
-      list-style: none;
-      padding: 0;
-      margin: 0;
-      display: flex;
-      gap: 20px;
-      flex-wrap: wrap;
-    }
+  <!-- bootstrap core css -->
+  <link rel="stylesheet" type="text/css" href="css/bootstrap.css" />
 
-    .nav-links a {
-      color: #6a2e7c;
-      text-decoration: none;
-      font-weight: 600;
-      font-size: 18px;
-      padding: 10px 16px;
-      border-radius: 8px;
-      transition: 0.3s ease-in-out;
-    }
-
-    .nav-links a:hover {
-      background-color: #fcc7ed;
-      color: #fff;
-    }
-
-    /* Hero Section */
-    header {
-      text-align: center;
-      margin-top: 160px;
-      padding: 0 20px;
-    }
-
-    header h1 {
-      font-size: 60px;
-      color: #FFB6C1;
-      font-family: 'Dancing Script', cursive;
-      letter-spacing: 1px;
-      margin: 0;
-      text-shadow: 2px 2px 5px rgba(0,0,0,0.4);
-    }
-
-    .highlight-all,
-    .highlight-need,
-    .highlight-icecream {
-      color: #ff6f61;
-    }
-
-    .subheading {
-      font-size: 28px;
-      color: #fff;
-      margin-top: 10px;
-    }
-
-    /* Call to Action */
-    .cta-button {
-      text-align: center;
-      margin: 60px 0;
-    }
-
-    .cta-button a {
-      background-color: #f5b8e3;
-      color: #fff;
-      padding: 14px 36px;
-      font-size: 22px;
-      border-radius: 30px;
-      text-decoration: none;
-      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
-      transition: background 0.3s ease;
-    }
-
-    .cta-button a:hover {
-      background-color: #e677c5;
-    }
-
-    /* Footer */
-    footer {
-      background-color: #3b261d;
-      color: #fff;
-      text-align: center;
-      padding: 20px 10px;
-      font-size: 15px;
-      position: relative;
-      margin-top:50px;
-    }
-
-    footer a {
-      color: #ff6f61;
-      text-decoration: none;
-    }
-
-    footer a:hover {
-      text-decoration: underline;
-    }
-
-    /* Modal Styling */
-    .w3-modal {
-      display: none;
-      position: fixed;
-      z-index: 1000;
-      left: 0;
-      top: 0;
-      width: 100%;
-      height: 100%;
-      background-color: rgba(0, 0, 0, 0.7);
-      overflow: auto;
-      transition: opacity 0.3s ease;
-    }
-
-    .w3-modal-content {
-      background-color: #fff;
-      border-radius: 20px;
-      padding: 40px;
-      width: 500px;
-      max-width: 90%;
-      margin: 10% auto;
-      box-shadow: 0 4px 15px rgba(0, 0, 0, 0.2);
-      animation: fadeIn 0.5s ease-in-out;
-    }
-
-    .w3-closebtn {
-      color: #6a2e7c;
-      font-size: 30px;
-      font-weight: bold;
-      position: absolute;
-      top: 20px;
-      right: 25px;
-      cursor: pointer;
-      transition: color 0.3s ease;
-    }
-
-    .w3-closebtn:hover {
-      color: #ff6f61;
-    }
-
-    .w3-input {
-      border-radius: 10px;
-      margin: 15px 0;
-      padding: 12px;
-      width: 100%;
-      font-size: 1rem;
-      border: 1px solid #ccc;
-      background-color: #f7f7f7;
-      transition: all 0.3s ease;
-    }
-
-    .w3-input:focus {
-      border-color: #ff6f61;
-      background-color: #fff;
-      outline: none;
-    }
-
-    .w3-button {
-      background-color: #f5b8e3;
-      color: white;
-      padding: 12px 36px;
-      font-size: 16px;
-      border-radius: 8px;
-      cursor: pointer;
-      border: none;
-      transition: background-color 0.3s ease;
-    }
-
-    .w3-button:hover {
-      background-color: #e677c5;
-    }
-
-    /* Animation for Modal */
-    @keyframes fadeIn {
-      from {
-        opacity: 0;
-      }
-      to {
-        opacity: 1;
-      }
-    }
-
-    /* Responsive Styles */
-    @media (max-width: 1024px) {
-      header h1 {
-        font-size: 48px;
-      }
-    }
-
-    @media (max-width: 768px) {
-      nav {
-        flex-direction: column;
-        align-items: center;
-      }
-
-      .nav-links ul {
-        flex-direction: column;
-        align-items: center;
-        margin-top: 15px;
-      }
-
-      .nav-links a {
-        font-size: 16px;
-        padding: 10px 20px;
-      }
-
-      header h1 {
-        font-size: 38px;
-      }
-    }
-
-    @media (max-width: 480px) {
-      .logo img {
-        height: 50px;
-      }
-
-      header h1 {
-        font-size: 32px;
-      }
-
-      .subheading {
-        font-size: 20px;
-      }
-
-      .cta-button a {
-        font-size: 16px;
-        padding: 10px 20px;
-      }
-
-      footer {
-        font-size: 13px;
-      }
-    }
-  </style>
+  <!-- fonts style -->
+  <link href="https://fonts.googleapis.com/css?family=Poppins:400,600,700&display=swap" rel="stylesheet">
+  <!-- Custom styles for this template -->
+  <link href="css/style.css" rel="stylesheet" />
+  <!-- responsive style -->
+  <link href="css/responsive.css" rel="stylesheet" />
 </head>
 
 <body>
+  <div class="hero_area">
+    <!-- header section strats -->
+    <header class="header_section">
+      <div class="container-fluid">
+        <nav class="navbar navbar-expand-lg custom_nav-container ">
+          <a class="navbar-brand" href="index.html">
+            <span>
+              Neogym
+            </span>
+          </a>
+          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+            <span class="navbar-toggler-icon"></span>
+          </button>
 
-  <!-- Navigation Bar -->
-  <nav>
-    <div class="logo">
-      <img src="GELATO.PNG" alt="Ice Land Logo">
-    </div>
-    <div class="nav-links">
-      <ul>
-        <li><a href="index.html">Home</a></li>
-        <li><a href="about.html">About</a></li>
-        <li><a href="items1.html">Items</a></li>
-        <li><a href="flavors.html">Flavors</a></li>
-        <li><a href="team.html">Team</a></li>
-        <li><a href="javascript:void(0)" onclick="openModal()">Contact</a></li>
-      </ul>
-    </div>
-  </nav>
-
-  <!-- Hero Section -->
-  <header>
-    <h1>
-      <span class="highlight-all">ALL</span> YOU <span class="highlight-need">NEED</span> IS LOVE <br>& <span class="highlight-icecream">ICE CREAM</span>
-    </h1>
-    <p class="subheading">Scoops of Happiness in every bite...!</p>
-  </header>
-
-  <!-- Call to Action -->
-  <div class="cta-button">
-    <a href="items1.html">Order Now</a>
+          <div class="collapse navbar-collapse" id="navbarSupportedContent">
+            <div class="d-flex ml-auto flex-column flex-lg-row align-items-center">
+              <ul class="navbar-nav  ">
+                <li class="nav-item active">
+                  <a class="nav-link" href="index.html">Home <span class="sr-only">(current)</span></a>
+                </li>
+                <li class="nav-item ">
+                  <a class="nav-link" href="why.html"> Why us </a>
+                </li>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="trainer.html"> trainers</a>
+                </li>
+                <li class="nav-item">
+                  <a class="nav-link" href="contact.html"> Contact Us</a>
+                </li>
+              </ul>
+              <div class="user_option">
+                <form class="form-inline my-2 my-lg-0 ml-0 ml-lg-4 mb-3 mb-lg-0">
+                  <button class="btn  my-2 my-sm-0 nav_search-btn" type="submit"></button>
+                </form>
+              </div>
+            </div>
+          </div>
+        </nav>
+      </div>
+    </header>
+    <!-- end header section -->
+    <!-- slider section -->
+    <section class=" slider_section position-relative">
+      <div id="carouselExampleIndicators" class="carousel slide" data-ride="carousel">
+        <div class="carousel-inner">
+          <div class="carousel-item active">
+            <div class="container">
+              <div class="col-lg-10 col-md-11 mx-auto">
+                <div class="detail-box">
+                  <div>
+                    <h3>
+                      Fitness
+                    </h3>
+                    <h2>
+                      Training
+                    </h2>
+                    <h1>
+                      Neogym
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse .
+                    </p>
+                    <div class="">
+                      <a href="">
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <div class="col-lg-10 col-md-11 mx-auto">
+                <div class="detail-box">
+                  <div>
+                    <h3>
+                      Fitness
+                    </h3>
+                    <h2>
+                      Training
+                    </h2>
+                    <h1>
+                      Neogym
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse .
+                    </p>
+                    <div class="">
+                      <a href="">
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <div class="col-lg-10 col-md-11 mx-auto">
+                <div class="detail-box">
+                  <div>
+                    <h3>
+                      Fitness
+                    </h3>
+                    <h2>
+                      Training
+                    </h2>
+                    <h1>
+                      Neogym
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse .
+                    </p>
+                    <div class="">
+                      <a href="">
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <div class="col-lg-10 col-md-11 mx-auto">
+                <div class="detail-box">
+                  <div>
+                    <h3>
+                      Fitness
+                    </h3>
+                    <h2>
+                      Training
+                    </h2>
+                    <h1>
+                      Neogym
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse .
+                    </p>
+                    <div class="">
+                      <a href="">
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+          <div class="carousel-item">
+            <div class="container">
+              <div class="col-lg-10 col-md-11 mx-auto">
+                <div class="detail-box">
+                  <div>
+                    <h3>
+                      Fitness
+                    </h3>
+                    <h2>
+                      Training
+                    </h2>
+                    <h1>
+                      Neogym
+                    </h1>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse .
+                    </p>
+                    <div class="">
+                      <a href="">
+                        Contact Us
+                      </a>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+        <ol class="carousel-indicators">
+          <li data-target="#carouselExampleIndicators" data-slide-to="0" class="active"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="1"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="2"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="3"></li>
+          <li data-target="#carouselExampleIndicators" data-slide-to="4"></li>
+        </ol>
+      </div>
+    </section>
+    <!-- end slider section -->
   </div>
 
-  <!-- Contact Modal -->
-  <div id="contactModal" class="w3-modal">
-    <div class="w3-modal-content">
-      <span class="w3-closebtn" onclick="closeModal()">&times;</span>
-      <h2 style="text-align: center; color: #6a2e7c;">Contact Us</h2>
-      <form action="/submit_contact_form" method="POST">
-        <input class="w3-input" type="text" name="name" placeholder="Your Name" required>
-        <input class="w3-input" type="email" name="email" placeholder="Your Email" required>
-        <textarea class="w3-input" name="message" placeholder="Your Message" required rows="4"></textarea>
-        <button type="button" class="w3-button" onclick="openSuccessModal()">Send Message</button>
-      </form>
-    </div>
-  </div>
 
-  <!-- Success Modal -->
-  <div id="successModal" class="w3-modal">
-    <div class="w3-modal-content">
-      <span class="w3-closebtn" onclick="closeSuccessModal()">&times;</span>
-      <h2 style="text-align: center; color: #6a2e7c;">Thank You!</h2>
-      <p style="text-align: center;">Your message has been sent successfully. We'll get back to you shortly.</p>
-      <div style="text-align: center;">
-        <button onclick="closeSuccessModal()" class="w3-button">Close</button>
+  <!-- Us section -->
+
+  <section class="us_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Why Choose Us
+        </h2>
+      </div>
+
+      <div class="us_container ">
+        <div class="row">
+          <div class="col-lg-3 col-md-6">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/u-1.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  QUALITY EQUIPMENT
+                </h5>
+                <p>
+                  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/u-4.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  NUTRITION
+                </h5>
+                <p>
+                  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/u-2.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  HEALTHY DIET PLAN
+                </h5>
+                <p>
+                  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                </p>
+              </div>
+            </div>
+          </div>
+          <div class="col-lg-3 col-md-6">
+            <div class="box">
+              <div class="img-box">
+                <img src="images/u-3.png" alt="">
+              </div>
+              <div class="detail-box">
+                <h5>
+                  SPORT TRAINING
+                </h5>
+                <p>
+                  ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor
+                </p>
+              </div>
+            </div>
+          </div>
+        </div>
       </div>
     </div>
-  </div>
+  </section>
 
-  <!-- Footer -->
-  <footer>
-    <p>&copy; 2025 GELATO..! | <a href="privacy.html">Privacy Policy</a> | <a href="terms.html">Terms & Conditions</a></p>
+  <!-- end us section -->
+
+
+  <!-- heathy section -->
+
+  <section class="heathy_section layout_padding">
+    <div class="container">
+
+      <div class="row">
+        <div class="col-md-12 mx-auto">
+          <div class="detail-box">
+            <h2>
+              HEALTHY MIND, HEALTHY BODY
+            </h2>
+            <p>
+              Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillumLorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum
+            </p>
+            <div class="btn-box">
+              <a href="">
+                READ MORE
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <!-- end heathy section -->
+
+  <!-- trainer section -->
+
+  <section class="trainer_section layout_padding">
+    <div class="container">
+      <div class="heading_container">
+        <h2>
+          Our Gym Trainers
+        </h2>
+      </div>
+      <div class="row">
+        <div class="col-lg-4 col-md-6 mx-auto">
+          <div class="box">
+            <div class="name">
+              <h5>
+                Smirth Jon
+              </h5>
+            </div>
+            <div class="img-box">
+              <img src="images/t1.jpg" alt="">
+            </div>
+            <div class="social_box">
+              <a href="">
+                <img src="images/facebook-logo.png" alt="">
+              </a>
+              <a href="">
+                <img src="images/twitter.png" alt="">
+              </a>
+              <a href="">
+                <img src="images/instagram-logo.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mx-auto">
+          <div class="box">
+            <div class="name">
+              <h5>
+                Jean Doe
+              </h5>
+            </div>
+            <div class="img-box">
+              <img src="images/t2.jpg" alt="">
+            </div>
+            <div class="social_box">
+              <a href="">
+                <img src="images/facebook-logo.png" alt="">
+              </a>
+              <a href="">
+                <img src="images/twitter.png" alt="">
+              </a>
+              <a href="">
+                <img src="images/instagram-logo.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+        <div class="col-lg-4 col-md-6 mx-auto">
+          <div class="box">
+            <div class="name">
+              <h5>
+                Alex Den
+              </h5>
+            </div>
+            <div class="img-box">
+              <img src="images/t3.jpg" alt="">
+            </div>
+            <div class="social_box">
+              <a href="">
+                <img src="images/facebook-logo.png" alt="">
+              </a>
+              <a href="">
+                <img src="images/twitter.png" alt="">
+              </a>
+              <a href="">
+                <img src="images/instagram-logo.png" alt="">
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end trainer section -->
+
+  <!-- contact section -->
+
+  <section class="contact_section ">
+    <div class="container-fluid">
+      <div class="row">
+        <div class="col-md-6 px-0">
+          <div class="img-box">
+            <img src="images/contact-img.jpg" alt="">
+          </div>
+        </div>
+        <div class="col-lg-5 col-md-6">
+          <div class="form_container pr-0 pr-lg-5 mr-0 mr-lg-2">
+            <div class="heading_container">
+              <h2>
+                Contact Us
+              </h2>
+            </div>
+            <form action="">
+              <div>
+                <input type="text" placeholder="Name" />
+              </div>
+              <div>
+                <input type="email" placeholder="Email" />
+              </div>
+              <div>
+                <input type="text" placeholder="Phone Number" />
+              </div>
+              <div>
+                <input type="text" class="message-box" placeholder="Message" />
+              </div>
+              <div class="d-flex ">
+                <button>
+                  Send
+                </button>
+              </div>
+            </form>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- end contact section -->
+
+  <!-- info section -->
+  <section class="info_section layout_padding2">
+    <div class="container">
+      <div class="info_items">
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-1">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                Location
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-2">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                +02 1234567890
+              </p>
+            </div>
+          </div>
+        </a>
+        <a href="">
+          <div class="item ">
+            <div class="img-box box-3">
+              <img src="" alt="">
+            </div>
+            <div class="detail-box">
+              <p>
+                demo@gmail.com
+              </p>
+            </div>
+          </div>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <!-- end info_section -->
+
+  <!-- footer section -->
+  <footer class="container-fluid footer_section">
+    <p>
+      &copy; 2020 All Rights Reserved. Design by
+      <a href="https://html.design/">Free Html Templates</a>
+    </p>
   </footer>
+  <!-- footer section -->
 
-  <script>
-    // Function to open the contact modal
-    function openModal() {
-      document.getElementById('contactModal').style.display = 'block';
-    }
-
-    // Function to close the contact modal
-    function closeModal() {
-      document.getElementById('contactModal').style.display = 'none';
-    }
-
-    // Function to open the success modal
-    function openSuccessModal() {
-      document.getElementById('successModal').style.display = 'block';
-      document.getElementById('contactModal').style.display = 'none'; // Close the contact modal
-    }
-
-    // Function to close the success modal
-    function closeSuccessModal() {
-      document.getElementById('successModal').style.display = 'none';
-    }
-  </script>
+  <script src="js/jquery-3.4.1.min.js"></script>
+  <script src="js/bootstrap.js"></script>
 
 </body>
+
 </html>
